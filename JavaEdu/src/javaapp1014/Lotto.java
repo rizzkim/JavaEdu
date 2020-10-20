@@ -24,40 +24,38 @@ public class Lotto {
 			
 			
 			//중복확인
-//			for(int j=0; j<=i-1; j=j+1) {
-//				System.out.println(i);
-//				System.out.println(j);
-//				if(saveNum[j] == saveNum[i]) {
-//					System.out.println("중복된 값을 입력하였습니다.");
-////					break outer;
-//					i=i-1;
-//					continue;
-//				}
-//			}
-			//강사님
-			if(i>0) {
-				//중복된 데이터가 있는지 확인하기 위한 변수
-				boolean flag = false;
-				for(int j=0; j<=i-1; j=j+1) {
-					//데이터가 중복되었다면 flag를 true로 변경
-					if(saveNum[i] == saveNum[j]) {
-						flag = true;
-						break;
-					}
-				}
-				// 데이터가 중복되었다면
-				if(flag == true) {
-					System.out.printf("중복된 데이터 입니다\n");
+			for(int j=0; j<=i-1; j=j+1) {
+				if(saveNum[j] == saveNum[i]) {
+					System.out.println("중복된 값을 입력하였습니다.");
+//					break outer;
 					i=i-1;
 					continue;
 				}
 			}
+			//강사님
+//			if(i>0) {
+//				//중복된 데이터가 있는지 확인하기 위한 변수
+//				boolean flag = false;
+//				for(int j=0; j<=i-1; j=j+1) {
+//					//데이터가 중복되었다면 flag를 true로 변경
+//					if(saveNum[i] == saveNum[j]) {
+//						flag = true;
+//						break;
+//					}
+//				}
+//				// 데이터가 중복되었다면
+//				if(flag == true) {
+//					System.out.printf("중복된 데이터 입니다\n");
+//					i=i-1;
+//					continue;
+//				}
+//			}
 		}
 		
 		//선택 정렬
 		for(int i=0; i<saveNum.length-1; i=i+1) {
 			for(int j=i+1; j<saveNum.length; j=j+1) {
-				if(saveNum[i]>saveNum[j]) {
+				if(saveNum[i]<saveNum[j]) {
 					int temp = saveNum[i];
 					saveNum[i] = saveNum[j];
 					saveNum[j] = temp;
