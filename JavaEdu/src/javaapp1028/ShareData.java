@@ -30,14 +30,18 @@ public class ShareData implements Runnable{
 		return result;
 	}
 	
-	//idx 값을 10000번 1씩 증가시키면서 result에 더해주는 메소드
+//	idx 값을 10000번 1씩 증가시키면서 result에 더해주는 메소드
+//	private synchronized void sum() {
 	private void sum() {
 		for(int i=0; i<10000; i=i+1) {
-			idx = idx + 1;
-			try {
-				Thread.sleep(1);
-			}catch(Exception e) {}
-			result = result + idx;
+			//한번에 실행해야 하는 부분을 찾아서 synchronized로 묶어준다
+			synchronized(this) {
+				idx = idx + 1;
+				try {
+					Thread.sleep(1);
+				}catch(Exception e) {}
+				result = result + idx;	
+			}
 		}
 	}
 
