@@ -41,8 +41,5 @@ public class ThreadMain {
 //			예외 추적 코드를 콘솔에 출력
 			e.printStackTrace();
 		}
-
 	}
-	
-
 }

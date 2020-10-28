@@ -1,5 +1,6 @@
 package javaapp1028;
 
+
 public class SyncMain {
 
 	public static void main(String[] args) {

@@ -1,5 +1,4 @@
 package javaapp1028;
-
 //Runnable 인터페이스를 implements를 해서 Thread에 사용할 수
 //있는 클래스
 public class ShareData implements Runnable{
